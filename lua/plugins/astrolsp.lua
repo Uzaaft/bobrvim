@@ -1,4 +1,10 @@
-local servers = {} -- only add local servers if their commands are available
+local servers = {
+  "basedpyright",
+  "nixd",
+  "rust_analyzer",
+  "terraformls",
+  "vtsls",
+} -- only add local servers if their commands are available
 for server, cmd in pairs { julials = "julia" } do
   if vim.fn.executable(cmd) == 1 then table.insert(servers, server) end
 end
