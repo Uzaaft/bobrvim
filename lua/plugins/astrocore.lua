@@ -84,13 +84,16 @@ return {
           j2 = "jinja",
           jinja2 = "jinja",
           jinja = "jinja",
+          vars = "sh",
         },
         filename = {
+          [".vars"] = "sh",
           ["docker-compose.yaml"] = "yaml.docker-compose",
           ["docker-compose.yml"] = "yaml.docker-compose",
         },
         pattern = {
           ["%.env%.[%w_.-]+"] = "sh",
+          ["%.vars%.[%w_.-]+"] = "sh",
           [".*%.pkr.*%.hcl"] = "hcl.packer",
           [".*/kitty/.+%.conf"] = "bash",
           ["/tmp/neomutt.*"] = "markdown",
