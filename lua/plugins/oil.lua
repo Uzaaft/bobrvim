@@ -81,6 +81,8 @@ return {
       lsp_file_methods = { autosave_changes = "unmodified" },
       view_options = {
         is_hidden_file = function(name, bufnr)
+          if name:match "%.vars$" or name:match "%.tfvars$" then return false end
+
           local dir = require("oil").get_current_dir(bufnr)
           local is_hidden = vim.startswith(name, ".") and name ~= ".."
           -- if no git or no local directory (e.g. for ssh connections), just hide dotfiles
