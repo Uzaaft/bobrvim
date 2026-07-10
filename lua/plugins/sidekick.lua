@@ -24,12 +24,8 @@ return {
               desc = "Toggle AI CLI",
             },
             [prefix .. "<CR>"] = {
-              function() require("sidekick.cli").toggle { name = "codex", focus = true } end,
+              function() require("sidekick.cli").toggle { name = "pi", focus = true } end,
               desc = "Toggle Codex",
-            },
-            [prefix .. "O"] = {
-              function() require("sidekick.cli").toggle { name = "opencode", focus = true } end,
-              desc = "Toggle OpenCode",
             },
             [prefix .. "A"] = {
               function() require("sidekick.cli").toggle { filter = { installed = true } } end,
