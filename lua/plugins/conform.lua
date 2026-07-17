@@ -18,7 +18,14 @@ return {
 
     opts.formatters_by_ft = {
       ["*"] = function(bufnr)
-        return buf_utils.is_valid(bufnr) and buf_utils.has_filetype(bufnr) and { "injected" } or {}
+        return buf_utils.is_valid(bufnr)
+            and buf_utils.has_filetype(bufnr)
+            and not vim.tbl_contains({
+              -- ignored filetypes
+              "sshconfig",
+            }, vim.bo[bufnr].filetype)
+            and { "injected" }
+          or {}
       end,
       packer = { "packer_fmt" },
       toml = { "taplo" },
