@@ -52,9 +52,5 @@ return {
       "js-debug-adapter",
       "php-debug-adapter",
     },
-    integrations = {
-      ["mason-lspconfig"] = false,
-      ["mason-nvim-dap"] = false,
-    },
   },
 }
